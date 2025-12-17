@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edoardo Cremente - Game Programmer Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        
+        /* CSS PERSONALIZZATO */
+        body {
+            background-color: #121212; /* Sfondo scuro */
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(26, 99, 30, 0.7)), url(""); /* Metti qui uno screenshot figo */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .game-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: #0d6efd; /* Colore accento blu */
+        }
+
+        .tech-badge {
+            font-size: 0.8em;
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 5px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+
+        .role-item {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        .role-item i {
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+        .divider {
+            color: #444;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Edoardo Cremente</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">My Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="header-titles text-center">
+                <h1 class="display-3 fw-bold">Hi, I'm Edoardo</h1>
+                
+                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mt-3">
+                    <div class="role-item">
+                        <i class="fas fa-gamepad text-primary"></i>
+                        <span>GAMEPLAY</span>
+                    </div>
+                    <div class="divider">|</div>
+                    <div class="role-item">
+                        <i class="fas fa-microchip text-success"></i>
+                        <span>SYSTEMS</span>
+                    </div>
+                    <div class="divider">|</div>
+                    <div class="role-item">
+                        <i class="fas fa-tools text-warning"></i>
+                        <span>TOOLS</span>
+                    </div>
+                </div>
+                <p class="mt-3 text-muted">Junior Technical Gameplay & Systems Programmer</p>
+            </div>
+            <div class="mt-4 d-flex justify-content-center flex-wrap gap-2">
+                <a href="#portfolio" class="btn btn-primary btn-lg">
+                    Take a look at My Games!
+                </a>
+                
+                <a href="https://github.com/e-cremente" target="_blank" class="btn btn-outline-light btn-lg">
+                    <i class="fab fa-github me-2"></i>GitHub
+                </a>
+                
+                <a href="https://www.linkedin.com/in/edoardo-cremente-923973185/" target="_blank" class="btn btn-outline-info btn-lg">
+                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2 class="text-center mb-5">About Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <p class="fs-5">
+                    As a Game Programmer, my core interest is to create and develop smooth and satisfying Gameplay features for any
+                    of the games I work on. I also enjoy to plan, optimize and bring useful Tools and Gameplay Systems to life,
+                    making the workflow easier either for designers so they can focus on ideating and testing functionalities, or 
+                    other programmers so that retouching, mantaining or updating the code is no big deal.
+                    <br><br>
+                    As a hobby, I also enjoy voice acting. Even though I'm Italian, you can expect to find some of my voice in games
+                    I participated in!
+                </p>
+                <div class="mt-4">
+                    <h5>Tech Stack:</h5>
+                    <span class="badge bg-primary">C#</span>
+                    <span class="badge bg-primary">C++</span>
+                    <span class="badge bg-secondary">Unity</span>
+                    <span class="badge bg-secondary">Unreal Engine 5</span>
+                    <span class="badge bg-success">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-dark">
+
+        <div class="container mb-5">
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-4">
+                    <input type="text" id="searchInput" class="form-control bg-dark text-white border-secondary" placeholder="Cerca progetto per nome...">
+                </div>
+                
+                <div class="col-md-auto">
+                    <select id="engineFilter" class="form-select bg-dark text-white border-secondary">
+                        <option value="all">Tutti gli Engine</option>
+                        <option value="unity">Unity</option>
+                        <option value="unreal">Unreal Engine</option>
+                    </select>
+                </div>
+        
+                <div class="col-md-auto">
+                    <button id="sortDateBtn" class="btn btn-outline-secondary">
+                        Ordina per Data <i class="fas fa-sort"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="text-center mb-5">I Miei Progetti</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 project-item" data-name="title" data-engine="unity" data-date="YYYYMMDD">
+                    <div class="card game-card h-100 text-white">
+                        <div class="ratio ratio-16x9">
+                            <iframe
+                                src="https://www.youtube.com/embed/TF1pGFTLkf8?si=JFxJSq7SZQ4--bxU?rel=0" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen></iframe>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h3 class="card-title">Titolo del Gioco 1</h3>
+                            <div class="mb-3">
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">C#</span>
+                                <span class="tech-badge">3D</span>
+                            </div>
+                            <p class="card-text">
+                                Un breve descrizione del gioco. Qui puoi spiegare cosa hai fatto tu nello specifico.
+                                Esempio: "Ho programmato l'AI dei nemici usando Behavior Trees e implementato il sistema di salvataggio."
+                            </p>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-decoration-none text-light"><i class="fab fa-github"></i> Vedi Codice</a>
+                                <a href="https://itch.io" target="_blank" class="btn btn-success"><i class="fas fa-download"></i> Scarica Build</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 project-item" data-name="title" data-engine="insert-engine-here" data-date="YYYYMMDD">
+                    <div class="card game-card h-100 text-white">
+                        <img src="https://via.placeholder.com/600x340" class="card-img-top" alt="Screenshot gioco">
+                        
+                        <div class="card-body">
+                            <h3 class="card-title">Titolo del Gioco 2</h3>
+                            <div class="mb-3">
+                                <span class="tech-badge">Unreal Engine</span>
+                                <span class="tech-badge">C++</span>
+                            </div>
+                            <p class="card-text">
+                                Descrizione del secondo progetto. Focus sulle sfide tecniche affrontate.
+                            </p>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="#" class="text-decoration-none text-light"><i class="fab fa-github"></i> Vedi Codice</a>
+                                <a href="#" class="btn btn-success"><i class="fas fa-download"></i> Scarica Build</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container mb-5">
+        <h2 class="text-center mb-4">Contattami</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="https://formspree.io/f/TUO_CODICE_FORMSPREE" method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">La tua Email</label>
+                        <input type="email" name="email" class="form-control bg-secondary text-white border-0" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Messaggio</label>
+                        <textarea name="message" class="form-control bg-secondary text-white border-0" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Invia Messaggio</button>
+                </form>
+                
+                <div class="text-center mt-4">
+                    <p>Oppure scrivimi direttamente a: <a href="mailto:tuaemail@gmail.com" class="text-info">tuaemail@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 bg-black text-secondary">
+        <p>&copy; 2024 Tuo Nome. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const engineFilter = document.getElementById('engineFilter');
+            const sortDateBtn = document.getElementById('sortDateBtn');
+            const projectContainer = document.querySelector('#portfolio .row'); // Il contenitore dei progetti
+            const projects = Array.from(document.querySelectorAll('.project-item'));
+        
+            let ascending = false;
+        
+            // Funzione principale di Filtraggio
+            function filterProjects() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedEngine = engineFilter.value;
+        
+                projects.forEach(project => {
+                    const name = project.getAttribute('data-name').toLowerCase();
+                    const engine = project.getAttribute('data-engine');
+                    
+                    const matchesSearch = name.includes(searchTerm);
+                    const matchesEngine = selectedEngine === 'all' || engine === selectedEngine;
+        
+                    if (matchesSearch && matchesEngine) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            }
+        
+            // Funzione di Ordinamento per Data
+            function sortProjects() {
+                ascending = !ascending;
+                const sorted = projects.sort((a, b) => {
+                    const dateA = parseInt(a.getAttribute('data-date'));
+                    const dateB = parseInt(b.getAttribute('data-date'));
+                    return ascending ? dateA - dateB : dateB - dateA;
+                });
+        
+                // Svuota e riappende i progetti ordinati
+                sorted.forEach(el => projectContainer.appendChild(el));
+            }
+        
+            // Listeners
+            searchInput.addEventListener('input', filterProjects);
+            engineFilter.addEventListener('change', filterProjects);
+            sortDateBtn.addEventListener('click', sortProjects);
+        });
+    </script>
+</body>
+</html>
