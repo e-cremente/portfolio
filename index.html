@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,17 @@
             color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+	:root {
+	    --bg-dark: #0a0a0a;
+	    --bg-card: #161616;
+	    /* --bg-card: #1e1e1e; */
+
+	    /* --neon-green: #39FF14; (Toxic Green) */
+	    --neon-green: #00FF95; /* (Emerald Cyber) */
+
+	    --text-main: #f0f0f0;
+	}
         
         /* Hero Section */
         .hero {
@@ -31,16 +42,50 @@
         }
 
         .game-card {
-            background-color: #1e1e1e;
+            background-color: var(--bg-card);;
             border: 1px solid #333;
-            transition: transform 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	    border-radius: 12px;
+	    overflow: hidden;
             margin-bottom: 30px;
         }
         
         .game-card:hover {
             transform: translateY(-5px);
-            border-color: #0d6efd; /* Colore accento blu */
-        }
+	    box-shadow: 0 15px 35px rgba(0, 255, 149, 0.3);
+            border-color: var(--neon-green);
+	}
+
+	.project-item {
+	    margin-bottom: 0.5rem;
+	}
+	
+	.custom-input {
+   	    background-color: #050505;
+   	    border: 1px solid #333;
+     	    border-radius: 5px;
+   	    padding: 12px;
+   	    transition: all 0.3s ease;
+	}
+
+	.custom-input:focus {
+    	    border-color: var(--neon-green);
+	    box-shadow: 0 0 10px rgba(0, 255, 149, 0.2);
+	    outline: none;
+	}
+
+	.btn-outline-success {
+    	    background-color: transparent !important;
+	    border: 2px solid var(--neon-green) !important;
+	    color: var(--neon-green) !important; 	   
+	    transition: all 0.3s ease;
+	}
+
+	.btn-outline-success:hover {
+    	    background-color: var(--neon-green) !important;
+    	    color: #000 !important;
+    	    box-shadow: 0 0 20px var(--neon-green) !important;
+	}
 
         .tech-badge {
             font-size: 0.8em;
@@ -106,7 +151,7 @@
                 <p class="mt-3 text-muted">Junior Technical Gameplay & Systems Programmer</p>
             </div>
             <div class="mt-4 d-flex justify-content-center flex-wrap gap-2">
-                <a href="#portfolio" class="btn btn-primary btn-lg">
+                <a href="#portfolio" class="btn btn-outline-success btn-lg">
                     Take a look at My Games!
                 </a>
                 
@@ -171,9 +216,9 @@
         </div>
 
         <div class="container">
-            <h2 class="text-center mb-5">My Projects</h2>
+            <h2 class="text-center mb-5">My Games</h2>
             
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-6 project-item" data-name="snakeshifter" data-engine="unity" data-date="20241219">
                     <div class="card game-card h-100 text-white">
                         <div class="ratio ratio-16x9">
@@ -239,10 +284,10 @@
 				<span class="tech-badge">2D</span>
                             </div>
                             <p class="card-text">
-			    <b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, level interactions (collisions and hazards), level construction (level sections ordering and obstacles spawn), collectibles and save systems, tutorial section, assets integration and animations, helped with sound and UI.
-                                <br>
+			   	<b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, level interactions (collisions and hazards), level construction (level sections ordering and obstacles spawn), collectibles and save systems, tutorial section, assets integration and animations, helped with sound and UI.
+			    	<br><br>
 				<b>Development Time:</b> 1.5 months.
-				<br>
+				<br><br>
 				This was my second project and first ever mobile experiment!
 				The task was to create a game that would be playable in local coop on a single mobile screen.
 				My first thought was to push towards cooperation instead of competition, and I was able to convince the rest of the team to go for this path.
@@ -261,8 +306,52 @@
                     </div>
                 </div>
 
+		<div class="col-lg-6 project-item" data-name="suspack" data-engine="unity" data-date="20250220">
+                    <div class="card game-card h-100 text-white">
+                        <img src="Images/SusPackLogo.png" class="card-img-top" alt="SusPack's logo">
+                        
+                        <div class="card-body">
+                            <h3 class="card-title">SusPack</h3>
+                            <div class="mb-3">
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">C#</span>
+				<span class="tech-badge">First Person</span>
+				<span class="tech-badge">Jam</span>
+
+                            </div>
+                            <p class="card-text">
+                                <b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, Weapon (animation integration, reload, shooting) and Projectile (interaction with environment, collisions with floor/enemies with different behaviours), BubbleWrap behaviour, game rules, interaction system with the boxes, helped with game flow and UI interaction, voiced main character.
+				<br><br>
+				<b>Development Time:</b> 1 week.
+				<br><br>
+				Of all the projects I did, SusPack is like the dear child I always keep in my heart. 
+				It was my very first experience working on a game jam (aka very unhealthy lifestyle consisting on sleepless nights and a nutricious intake not definable as "diet") and my very first work done outside of my academic career. 
+				<br>
+				The theme of the jam was "Bubble".
+				<br>
+				It may seem like nothing, but projects done as a student are always "safer", meaning you have experienced people covering your back and offering help, especially during the project's organization phases. 
+				Here, we were completely independent, and I also worked with people I never met before (they were the minority, but still) and let me tell you... It absolutely shows.
+				The repository of this project is a complete mess, and I still remember during the last day, all the colliders in the level magically disappeared, which meant rushing in the final minutes to put everything back (we failed).
+				If this is not the core experience of a game jam, I don't know what is.
+				<br>
+				In SusPack you play as a man that sent some... "suspicious packages" to an acquaintance of his while being in an inebriated state.
+				The morning after, he regrets his choice and goes to infiltrate the post warehouse to "steal back" the packages before they are actually sent  for good.
+				If only the office wasn't guarded by patrolling robots ready to not let anyone interfere with their jobs...
+				With your BubbleWrap gun you must go and retrieve all the packages without being caught, and then escape the warehouse.
+				<br><br>
+				P.S. Even if we didn't personally record a trailer for this game, and the gameplay footage is kinda random, there was one person that decided to speedrun our game 10 minutes after we released it. I still don't know how he was able to complete it so fast after so less time, but I can for sure say me and my team were flattered to see our game being spedrun! To see that glorious performance, watch <a href="https://drive.google.com/file/d/1a1fKjwZlBnMqGhCJPplJoQY-YAUvzbYL/view?usp=drive_link">this video</a>. Just please don't judge the game from what you see here, since it looks like a showcase of everything that is broken (walking during the black screen after the game is restarted, going through things which we didn't manage to put the collider back for in time)... Nonetheless, fun!
+			    </p>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="https://github.com/e-cremente/SusPack/" class="text-decoration-none text-light"><i class="fab fa-github"></i> Github Page</a>
+                                <a href="https://globalgamejam.org/games/2025/suspack-8" class="btn btn-success"><i class="fas fa-download"></i> Download .exe Build</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+	</div>
     </section>
 
     <section id="contact" class="container mb-5">
@@ -270,19 +359,25 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form action="https://formspree.io/f/xrezelqg" method="POST">
+		    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" name="name" class="form-control bg-secondary text-white custom-input" placeholder="ex: Mario Rossi" required>
+                    </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Your E-Mail</label>
-                        <input type="email" name="email" class="form-control bg-secondary text-white border-0" id="email" required>
+                        <input type="email" name="email" class="form-control bg-secondary text-white custom-input" placeholder="ex: mario.rossi@gmail.com" id="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea name="message" class="form-control bg-secondary text-white border-0" id="message" rows="4" required></textarea>
+                        <textarea name="message" class="form-control bg-secondary text-white custom-input" id="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    <button type="submit" class="btn btn-outline-success btn-primary w-100">
+			    <i class="fas fa-paper-plane me-2"></i>Send Message
+		    </button>
                 </form>
                 
                 <div class="text-center mt-4">
-                    <p>Alternatively, send an email directly to: <a href="mailto:edoardo.cremente@tiscali.it" class="text-info">edoardo.cremente@tiscali.it</a></p>
+                    <p class="text-muted">Alternatively, send an email directly to: <a href="mailto:edoardo.cremente@tiscali.it" class="text-success text-decoration-none">edoardo.cremente@tiscali.it</a></p>
                 </div>
             </div>
         </div>
