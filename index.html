@@ -1,561 +1,267 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edoardo Cremente - Game Programmer Portfolio</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edoardo Cremente — Game Programmer</title>
+  <meta name="description" content="Portfolio of Edoardo Cremente, junior gameplay & systems programmer.">
 
-    <style>
-        
-        /* CSS PERSONALIZZATO */
-        body {
-            background-color: #121212; /* Sfondo scuro */
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #161616;
-            /* --bg-card: #1e1e1e; */
-
-            /* --neon-green: #39FF14; (Toxic Green) */
-            --neon-green: #00FF95; /* (Emerald Cyber) */
-
-            --text-main: #f0f0f0;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(26, 99, 30, 0.7)), url(""); /* Metti qui uno screenshot figo */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .game-card {
-            background-color: var(--bg-card);;
-            border: 1px solid #333;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	        border-radius: 12px;
-	        overflow: hidden;
-            margin-bottom: 30px;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-5px);
-	        box-shadow: 0 15px 35px rgba(0, 255, 149, 0.3);
-            border-color: var(--neon-green);
-	    }
-
-        .project-item {
-            margin-bottom: 0.5rem;
-        }
-	
-        .custom-input {
-            background-color: #050505;
-            border: 1px solid #333;
-            border-radius: 5px;
-            padding: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .custom-input:focus {
-            border-color: var(--neon-green);
-            box-shadow: 0 0 10px rgba(0, 255, 149, 0.2);
-            outline: none;
-        }
-
-        .btn-outline-success {
-            background-color: transparent !important;
-            border: 2px solid var(--neon-green) !important;
-            color: var(--neon-green) !important; 	   
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-success:hover {
-            background-color: var(--neon-green) !important;
-            color: #000 !important;
-            box-shadow: 0 0 20px var(--neon-green) !important;
-        }
-
-        .tech-badge {
-            font-size: 0.8em;
-            background-color: #333;
-            padding: 5px 10px;
-            border-radius: 15px;
-            margin-right: 5px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-
-        .role-item {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
-        .role-item i {
-            margin-right: 8px;
-            font-size: 1.3rem;
-        }
-        .divider {
-            color: #444;
-            font-weight: bold;
-        }
-
-        .work-in-progress {
-            width: 50% !important;
-            height: 20% !important;           
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Edoardo Cremente</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">My Games</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">e-cremente<span class="cursor">▮</span></a>
+
+      <div class="nav-links">
+        <a href="#about"   data-i18n="nav.about">About</a>
+        <a href="#portfolio" data-i18n="nav.games">Games</a>
+        <a href="#cv"      data-i18n="nav.cv">CV</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button data-lang="en" class="active">EN</button>
+          <button data-lang="it">IT</button>
         </div>
-    </nav>
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button id="navToggle" class="icon-btn nav-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="header-titles text-center">
-                <h1 class="display-3 fw-bold">Hi, I'm Edoardo</h1>
-                
-                <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mt-3">
-                    <div class="role-item">
-                        <i class="fas fa-gamepad text-primary"></i>
-                        <span>GAMEPLAY</span>
-                    </div>
-                    <div class="divider">|</div>
-                    <div class="role-item">
-                        <i class="fas fa-microchip text-success"></i>
-                        <span>SYSTEMS</span>
-                    </div>
-                </div>
-                <p class="mt-3 text-muted">Junior Technical Gameplay & Systems Programmer</p>
-            </div>
-            <div class="mt-4 d-flex justify-content-center flex-wrap gap-2">
-                <a href="#portfolio" class="btn btn-outline-success btn-lg">
-                    Take a look at My Games!
-                </a>
-                
-                <a href="https://github.com/e-cremente" target="_blank" class="btn btn-outline-light btn-lg">
-                    <i class="fab fa-github me-2"></i>GitHub
-                </a>
-                
-                <a href="https://www.linkedin.com/in/edoardo-cremente-923973185/" target="_blank" class="btn btn-outline-info btn-lg">
-                    <i class="fab fa-linkedin me-2"></i>LinkedIn
-                </a>
-            </div>
+  <!-- ===================== HERO ===================== -->
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="kicker" data-i18n="hero.kicker">Junior gameplay &amp; systems programmer</span>
+        <h1>Hi, I'm <span class="accent">Edoardo</span></h1>
+        <div class="roles">
+          <span><i class="fas fa-gamepad"></i><span data-i18n="hero.role1">Gameplay</span></span>
+          <span class="dot">/</span>
+          <span><i class="fas fa-microchip"></i><span data-i18n="hero.role2">Systems</span></span>
         </div>
-    </header>
-
-    <section id="about" class="container">
-        <h2 class="text-center mb-5">About Me</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <p class="fs-5">
-                    As a Game Programmer, my main interest is to create and develop smooth and satisfying Gameplay features for any
-                    game I work on. I also enjoy to plan, optimize and bring useful Gameplay Systems to life,
-                    making the workflow easier either for designers so they can focus on ideating and testing functionalities, or 
-                    other programmers so that retouching, mantaining or updating the code is no big deal.
-                    <br><br>
-                    As a hobby, I also enjoy voice acting. Even though I'm Italian, you can expect to find some of my voice in games
-                    I participated in!
-                </p>
-                <div class="mt-4">
-                    <h5>Tech Stack:</h5>
-                    <span class="badge bg-primary">C#</span>
-                    <span class="badge bg-primary">C++</span>
-                    <span class="badge bg-secondary">Unity</span>
-                    <span class="badge bg-secondary">Unreal Engine 5</span>
-                    <span class="badge bg-success">Git</span>
-                </div>
-            </div>
+        <p class="tagline" data-i18n="hero.tagline">
+          I build <strong>smooth, satisfying gameplay</strong> and the <strong>systems</strong> that make a team's workflow easier. Unity &amp; Unreal, C# &amp; C++.
+        </p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary"><span data-i18n="hero.cta_games">See my games</span> <i class="fas fa-arrow-down"></i></a>
+          <a href="https://github.com/e-cremente" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fab fa-github"></i> <span data-i18n="hero.github">GitHub</span></a>
+          <a href="https://www.linkedin.com/in/edoardo-cremente-923973185/" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fab fa-linkedin"></i> <span data-i18n="hero.linkedin">LinkedIn</span></a>
         </div>
-    </section>
+      </div>
 
-    <section id="portfolio" class="bg-dark">
+      <div class="hero-deco reveal" aria-hidden="true">
+        <span class="big">&lt;/&gt;</span>
+        gameplay.cs<br>
+        systems.cpp<br>
+        portfolio.exe
+      </div>
+    </div>
+  </header>
 
-        <div class="container mb-5">
-            <div class="row g-3 justify-content-center">
-                <div class="col-md-4">
-                    <input type="text" id="searchInput" class="form-control bg-dark text-white border-secondary" placeholder="Cerca progetto per nome...">
-                </div>
-                
-                <div class="col-md-auto">
-                    <select id="engineFilter" class="form-select bg-dark text-white border-secondary">
-                        <option value="all">All Engines</option>
-                        <option value="unity">Unity</option>
-                        <option value="unreal">Unreal Engine</option>
-                    </select>
-                </div>
-        
-                <div class="col-md-auto">
-                    <button id="sortDateBtn" class="btn btn-outline-secondary">
-                        Sort by Date <i class="fas fa-sort"></i>
-                    </button>
-                </div>
-            </div>
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="wrap">
+    <div class="section-label reveal" data-i18n="about.label">about me</div>
+    <div class="about-top">
+      <div class="about-lead reveal" data-i18n="about.lead">
+        As a game programmer my main goal is to create and develop <span class="hl">smooth, satisfying gameplay features</span> for any game I'm working on.
+      </div>
+      <div class="reveal">
+        <div class="photo-frame">
+          <!-- Quando avrai la foto, sostituisci il blocco placeholder con:
+               <img src="Images/edoardo.jpg" alt="Edoardo Cremente"> -->
+          <div class="photo-placeholder">
+            <i class="fas fa-user"></i>
+            <span data-i18n="about.photo_placeholder">[ your photo here ]</span>
+          </div>
+        </div>
+        <p class="photo-caption" data-i18n="about.photo_caption">// photo coming soon</p>
+      </div>
+    </div>
+
+    <div class="about-personal reveal">
+      <span class="tag" data-i18n="about.personal_tag">// off the clock</span>
+      <p data-i18n="about.personal">As a hobby I also do voice acting.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PORTFOLIO ===================== -->
+  <section id="portfolio" class="wrap">
+    <div class="section-label reveal" data-i18n="portfolio.label">selected work</div>
+    <h2 class="reveal" style="font-size:clamp(2rem,5vw,3.4rem);margin-bottom:2rem;" data-i18n="portfolio.title">My Games</h2>
+
+    <div class="controls reveal">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" class="field" data-i18n-ph="portfolio.search_ph" placeholder="search by name...">
+      </div>
+      <select id="engineFilter" class="field" style="width:auto">
+        <option value="all"    data-i18n="portfolio.filter_all">All engines</option>
+        <option value="unity"  data-i18n="portfolio.filter_unity">Unity</option>
+        <option value="unreal" data-i18n="portfolio.filter_unreal">Unreal Engine</option>
+      </select>
+      <button id="sortDateBtn" class="btn btn-ghost"><span data-i18n="portfolio.sort">Sort by date</span> <i class="fas fa-sort"></i></button>
+    </div>
+
+    <div id="project-grid" class="project-grid"><!-- generato da script.js --></div>
+  </section>
+
+  <!-- ===================== CV ===================== -->
+  <section id="cv" class="wrap">
+    <div class="cv-head">
+      <div>
+        <div class="section-label reveal" data-i18n="cv.label">curriculum</div>
+        <h2 class="reveal" data-i18n="cv.title">Resume</h2>
+      </div>
+      <a href="cv.pdf" class="btn btn-primary reveal" download><i class="fas fa-file-arrow-down"></i> <span data-i18n="cv.download">Download PDF</span></a>
+    </div>
+
+    <div class="cv-grid">
+      <!-- colonna sinistra -->
+      <div class="cv-col">
+        <div class="cv-block reveal">
+          <h4 data-i18n="cv.contacts_h">Contacts</h4>
+          <div class="contact-line"><i class="fas fa-envelope"></i> edoardo.cremente@tiscali.it</div>
+          <div class="contact-line"><i class="fas fa-location-dot"></i> Milano, Italia</div>
+          <div class="contact-line"><i class="fab fa-github"></i> github.com/e-cremente</div>
+          <div class="contact-line"><i class="fab fa-linkedin"></i> linkedin.com/in/edoardo-cremente</div>
         </div>
 
-        <div class="container">
-            <h2 class="text-center mb-5">My Games</h2>
-            
-            <div class="row g-4">
-                <div class="col-lg-6 project-item" data-name="snakeshifter" data-engine="unity" data-date="20241219">
-                    <div class="card game-card h-100 text-white">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube.com/embed/TF1pGFTLkf8?si=JFxJSq7SZQ4--bxU?rel=0" 
-                                title="YouTube video player" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen></iframe>
-                        </div>
-                        
-                        <div class="card-body">
-                            <h3 class="card-title">SnakeShifter</h3>
-                            <div class="mb-3">
-                                <span class="tech-badge">Unity</span>
-                                <span class="tech-badge">C#</span>
-                                <span class="tech-badge">Fake 2D</span>
-                            </div>
-                            <p class="card-text">
-                                <b>What I worked on:</b> everything from start to finish.
-				                <br><br>
-				                <b>Development Time:</b> 3 weeks.
-				                <br><br>
-                                A big classic. This was my first ever project from every point of view. First team work with designers, first academic project, first Unity approach.
-                                Looking at it makes me feel nostalgic! The game is a revisitation of the classic Snake. In SnakeShifter you will start as a white snake,
-                                and after eating your first "fruit", you will only be able to eat subsequent "fruits" that share the same shape with the one you just ate, or
-                                the same color (ever played Uno?). Add this to some ticking time bombs (the pulsating "fruits"), the increasing speed, and the power-ups, and you obtain
-                                a pretty entertaining game for a first timer!
-                                <br>
-                                The game looks 2D but it's actually just using an ortographic camera looking at the game field. 
-                                <br>
-                                The game only uses Unity's basic shapes, and it operates on a system of custom ticks that happen in calculated moments. The code is what it is,
-                                I also smile when looking back at this project, but I can't say I didn't have fun!
-                            </p>
-                            
-                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                <a href="https://github.com/e-cremente/SnakeShifter" class="text-decoration-none text-light"><i class="fab fa-github"></i> GitHub Page</a>
-                                <a href="https://drive.google.com/file/d/1zugG4ZqbVVemEuA-xUsaNpnmlXmuvn1W/view?usp=drive_link" target="_blank" class="btn btn-success"><i class="fas fa-download"></i> Download .exe Build</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 project-item" data-name="suspack" data-engine="unity" data-date="20250220">
-                    <div class="card game-card h-100 text-white">
-                        <img src="Images/SusPackLogo.png" class="card-img-top" alt="SusPack's logo">
-                        
-                        <div class="card-body">
-                            <h3 class="card-title">SusPack</h3>
-                            <div class="mb-3">
-                                <span class="tech-badge">Unity</span>
-                                <span class="tech-badge">C#</span>
-				                <span class="tech-badge">First Person</span>
-				                <span class="tech-badge">Jam</span>
-                            </div>
-                            <p class="card-text">
-                                <b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, Weapon (animation integration, reload, shooting) and Projectile (interaction with environment, collisions with floor/enemies with different behaviours), BubbleWrap behaviour, game rules, interaction system with the boxes, helped with game flow and UI interaction, voiced main character.
-                                <br><br>
-                                <b>Development Time:</b> 1 week.
-                                <br><br>
-                                Of all the projects I did, SusPack is like the dear child I always keep in my heart. 
-                                It was my very first experience working on a game jam (aka very unhealthy lifestyle consisting on sleepless nights and a nutricious intake not definable as "diet") and my very first work done outside of my academic career. 
-                                <br>
-                                The theme of the jam was "Bubble".
-                                <br>
-                                It may seem like nothing, but projects done as a student are always "safer", meaning you have experienced people covering your back and offering help, especially during the project's organization phases. 
-                                Here, we were completely independent, and I also worked with people I never met before (they were the minority, but still) and let me tell you... It absolutely shows.
-                                The repository of this project is a complete mess, and I still remember during the last day, all the colliders in the level magically disappeared, which meant rushing in the final minutes to put everything back (we failed).
-                                If this is not the core experience of a game jam, I don't know what is.
-                                <br>
-                                In SusPack you play as a man that sent some... "suspicious packages" to an acquaintance of his while being in an inebriated state.
-                                The morning after, he regrets his choice and goes to infiltrate the post warehouse to "steal back" the packages before they are actually sent  for good.
-                                If only the office wasn't guarded by patrolling robots ready to not let anyone interfere with their jobs...
-                                With your BubbleWrap gun you must go and retrieve all the packages without being caught, and then escape the warehouse.
-                                <br><br>
-                                P.S. Even if we didn't personally record a trailer for this game, and the gameplay footage is kinda random, there was one person that decided to speedrun our game 10 minutes after we released it. I still don't know how he was able to complete it so fast after so less time, but I can for sure say me and my team were flattered to see our game being spedrun! To see that glorious performance, watch <a href="https://drive.google.com/file/d/1a1fKjwZlBnMqGhCJPplJoQY-YAUvzbYL/view?usp=drive_link">this video</a>. Just please don't judge the game from what you see here, since it looks like a showcase of everything that is broken (walking during the black screen after the game is restarted, going through things which we didn't manage to put the collider back for in time)... Nonetheless, fun!
-                            </p>
-                            
-                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                <a href="https://github.com/e-cremente/SusPack/" class="text-decoration-none text-light"><i class="fab fa-github"></i> Github Page</a>
-                                <a href="https://globalgamejam.org/games/2025/suspack-8" class="btn btn-success"><i class="fas fa-download"></i> Download .exe Build</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 project-item" data-name="ragnaraft" data-engine="unity" data-date="20250417">
-                    <div class="card game-card h-100 text-white">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube.com/embed/8Ox535Wi5cY?si=QzyLaUc80uaQhd0p?rel=0" 
-                                title="YouTube video player" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen></iframe>
-                        </div>
-                        
-                        <div class="card-body">
-                            <h3 class="card-title">Ragnaraft</h3>
-                            <div class="mb-3">
-                                <span class="tech-badge">Unity</span>
-                                <span class="tech-badge">C#</span>
-                                <span class="tech-badge">Mobile</span>
-				                <span class="tech-badge">2D</span>
-                            </div>
-                            <p class="card-text">
-			   	                <b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, level interactions (collisions and hazards), level construction (level sections ordering and obstacles spawn), collectibles and save systems, tutorial section, assets integration and animations, helped with sound and UI.
-			    	            <br><br>
-				                <b>Development Time:</b> 1.5 months.
-				                <br><br>
-                                This was my second project and first ever mobile experiment!
-                                The task was to create a game that would be playable in local coop on a single mobile screen.
-                                My first thought was to push towards cooperation instead of competition, and I was able to convince the rest of the team to go for this path.
-                                The idea was to have a little vehicle that could go in different directions depending on where the players would touch.
-                                After a bit of brainstorming we thought about a little story about two vikings and a boat, that ended up being a whole situation in which instead of being two vikings on a boat, one of the vikings IS the boat, and the other one rides him.
-                                Like that, Ragnaraft was born! Ride through the obstacles and get to the end to reach the damsel!
-                                <br>
-                                P.S. After a short time since the end of this project, the game <a href="https://store.steampowered.com/app/3570070/Paddle_Paddle_Paddle/">Paddle Paddle Paddle</a> came out. I'm gonna be honest, I was a bit salty to see that an idea so similar to ours became viral after coming out, but at the same time, I was happy to see that Paddle Paddle Paddle is proof that the concept behind our game works!
-                            </p>
-                            
-                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                <a href="https://github.com/e-cremente/Ragnaraft" class="text-decoration-none text-light"><i class="fab fa-github"></i> GitHub Page</a>
-                                <a href="https://drive.google.com/file/d/1DjS-zeoIHLirU1AU7NxXBxGilSZlriHv/view?usp=drive_link" target="_blank" class="btn btn-success"><i class="fas fa-download"></i> Download for Android</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 project-item" data-name="toduat!" data-engine="unity" data-date="20250627">
-                    <div class="card game-card h-100 text-white">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube.com/embed/Z7FnocU8ekk?si=rGX3U6EkcXTEsqTO?rel=0" 
-                                title="YouTube video player" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen></iframe>
-                        </div>
-                        
-                        <div class="card-body">
-                            <h3 class="card-title">ToDuat!</h3>
-                            <div class="mb-3">
-                                <span class="tech-badge">Unity</span>
-                                <span class="tech-badge">C#</span>
-                                <span class="tech-badge">First Person</span>
-                            </div>
-                            <p class="card-text">
-                                <b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, interaction system (organs, vases, tables), game flow and rules, quests system, tutorial, helped with dialogue system,
-                                machines behaviour and animations, systems to allow designers to easily create new days and new bodies, potentially adding new levels or infinite mode in the future.
-                                <br><br>
-                                <b>Development Time:</b> 2 months.
-                                <br><br>
-                                <b>Gameplay Video:</b> <a href="https://youtu.be/ypKf5tZiVtY">here</a>.
-                                <br><br>
-                                ToDuat! is probably the first game I consider more on the "complete" side. It has a flow, it has a personality, and (something not to be taken for granted) you can reach an end!
-                                <br>
-                                The task assigned was to create a first person "job simulator" with a twist. We extracted the job from a jar of little papers, ending up with "funeral services".
-                                We decided to set the game in an Egyptian atmosphere, with the "twist" of being Anubis' assistant.
-                                <br>
-                                The flow of the game is: a body arrives and you have to help Anubis to make his judgement: is this body worth to be sent to Duat, or is he a sinner and must be sent to rot in "hell"?
-                                Following a set of instructions that Anubis left for you, you will be able to purify the body and prepare it for his voyage, and then send him to the correct destination.
-                                The game is set in 4 different days, divided in two "work shifts". Every time you progress, new machinery, instructions and difficulties will add up to the cauldron of activities you need to do.
-                                <br>
-                                Depending on how good you perform, you can reach different endings. Will Anubis be satisfied with your work or will he consider sending you to rot in "hell"?
-                                <br><br>
-                                I consider the potential for this game to be... more than the average game made in 2 months. I recognize there is a little lack of feedbacks, and the way the player is instructed in what to do
-                                is just not clear enough, creating a sense of confusion in the beginning.
-                                <br><br>
-                                During development, I tried my best to not use the default unity CharacterController, and doing my movement from scratch, without a Rigidbody.
-                                <br>
-                                Unfortunately, no matter how hard I tried, the movement is just not enough fine tuned. By spamming some buttons (just try, eventually you will succeed) you will be able to pass through things.
-                                Grrrr... Maddening!
-                                <br>
-                                There is also a flow-breaking bug at the beginning of the game if you just... Do your best to not follow what the tutorial tells you to do. Will I correct it one day? Maybe...
-                                <br><br>
-                                P.S. A teammate of mine continued to work on this project for a while, implementing a more solid movement with the CharacterController. If you wish to try that build, contact me and I will find a way to
-                                let you have it!
-                            </p>
-                            
-                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                <a href="https://github.com/e-cremente/ToDuat" class="text-decoration-none text-light"><i class="fab fa-github"></i> GitHub Page</a>
-                                <a href="https://drive.google.com/file/d/10ADsGcVMAdr5Mb-4aUeahfINGpgOv4G2/view?usp=drive_link" target="_blank" class="btn btn-success"><i class="fas fa-download"></i> Download .exe Build</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 project-item" data-name="rob-botinspector" data-engine="unity" data-date="20250706">
-                    <div class="card game-card h-100 text-white">
-                        <div class="ratio ratio-16x9">
-                            <iframe
-                                src="https://www.youtube.com/embed/I3Cz8Wfr-kU?si=HwVxAZsz6DZCKljE?rel=0" 
-                                title="YouTube video player" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen></iframe>
-                        </div>
-                        
-                        <div class="card-body">
-                            <h3 class="card-title">Rob-Bot Inspector</h3>
-                            <div class="mb-3">
-                                <span class="tech-badge">Unity</span>
-                                <span class="tech-badge">C#</span>
-                                <span class="tech-badge">Third Person</span>
-                                <span class="tech-badge">Jam</span>
-                            </div>
-                            <p class="card-text">
-                                <b>What I worked on:</b> <abbr title="Camera, Character, Controller">CCC</abbr>, level construction, animation integration, shaders (shadow cones and texture change), quick time events, helped with interaction system.
-                                <br><br>
-                                <b>Development Time:</b> 1 week.
-                                <br><br>
-                                This is a cute one. This game is child of the last academy Game Jam we did in 2025 with Unity, before the end of the first year. The theme of the jam was "Duality",
-                                so we decided to make a game about a robot underground ticket checker, that becomes a thief when in the shadows. The goal of the game is to check as many tickets as possible
-                                and fine creatures without a ticket (if in the light), OR steal money and wallets from as many creatures as possible (while in the shadow).
-                                <br>
-                                As a Jam diversifier we chose to make a game without any text in it, so I hope the cute drawings will be enough to explain the rules!
-                                <br>
-                                This Jam was the first game in which i tried to experiment a little more with shaders. I will say that I successfully did what I set for myself as a goal (not without help),
-                                and I learned to appreciate that magic feeling you experience when you see your shader working as intended. At the same time... boy if it's hard to make decent shaders.
-                                <br>
-                                Fortunately, whatever is hard to learn about game developing is also intrinsecally interesting for me. This is just to say that it's definitely not over between me and you, shaders. 
-                            </p>
-                            
-                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                <a href="https://github.com/e-cremente/RobBot-Inspector" class="text-decoration-none text-light"><i class="fab fa-github"></i> GitHub Page</a>
-                                <a href="https://drive.google.com/file/d/1NcYP1n2Z7GNiMq2WmD6wdxNgB8UMHhBP/view?usp=drive_link" target="_blank" class="btn btn-success"><i class="fas fa-download"></i> Download .exe Build</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 project-item" data-name="" data-engine="" data-date="">
-                    <div class="card game-card h-100 text-white">
-                        <img src="Images/WorkInProgress.png" class="card-img-top work-in-progress" alt="Work in Progress sign">
-                        
-                        <div class="card-body">
-                            <h3 class="card-title">More projects to come...</h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-	</div>
-    </section>
-
-    <section id="contact" class="container mb-5">
-        <h2 class="text-center mb-4">Contact Me</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form action="https://formspree.io/f/xrezelqg" method="POST">
-		    <div class="mb-3">
-                        <label class="form-label">Your Name</label>
-                        <input type="text" name="name" class="form-control bg-secondary text-white custom-input" placeholder="ex: Mario Rossi" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Your E-Mail</label>
-                        <input type="email" name="email" class="form-control bg-secondary text-white custom-input" placeholder="ex: mario.rossi@gmail.com" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea name="message" class="form-control bg-secondary text-white custom-input" id="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-outline-success btn-primary w-100">
-			    <i class="fas fa-paper-plane me-2"></i>Send Message
-		    </button>
-                </form>
-                
-                <div class="text-center mt-4">
-                    <p class="text-muted">Alternatively, send an email directly to: <a href="mailto:edoardo.cremente@tiscali.it" class="text-success text-decoration-none">edoardo.cremente@tiscali.it</a></p>
-                </div>
-            </div>
+        <div class="cv-block reveal">
+          <h4 data-i18n="cv.hard_h">Hard skills</h4>
+          <div class="skill-tags">
+            <span class="tech">C#</span><span class="tech">C++</span>
+            <span class="tech">Unity</span><span class="tech">Unreal Engine 5</span>
+            <span class="tech">Git</span><!-- <span class="tech">[ + add more ]</span> -->
+          </div>
         </div>
-    </section>
 
-    <footer class="text-center py-4 bg-black text-secondary">
-        <p>&copy; 2025 Edoardo Cremente. All rights reserved.</p>
-    </footer>
+        <div class="cv-block reveal">
+          <h4 data-i18n="cv.soft_h">Soft skills</h4>
+          <div class="skill-tags">
+            <span class="tech">Teamwork</span><span class="tech">Problem solving</span>
+            <span class="tech">Communication</span><span class="tech">Code Architecture</span>
+            <span class="tech">Organization</span>
+          </div>
+        </div>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- colonna destra -->
+      <div class="cv-col">
+        <div class="cv-block reveal">
+          <h4 data-i18n="cv.edu_h">Education</h4>
+          <div class="cv-item">
+            <div class="role" data-i18n="dbga_role">Game Programming Course</div>
+            <div class="meta" data-i18n="dbga_meta">Digital Bros Game Academy — 2024-2026</div>
+            <div class="desc" data-i18n="dbga_desc">Gained precious knowledge on game development and the usage of Unity and Unreal Engine.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role" data-i18n="unipi_role">Computer Engineering Bachelor's Degree</div>
+            <div class="meta" data-i18n="unipi_meta">University of Pisa — 2017-2024</div>
+            <div class="desc" data-i18n="unipi_desc">Learned and passed exams on a variety of subjects spanning from Mathemathics and Physics to Informatics and Programming.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role" data-i18n="highschool_role">Scientific Highschool Diploma</div>
+            <div class="meta" data-i18n="highschool_meta">Liceo Scientifico Parentucelli, Sarzana — 2012-2017</div>
+            <div class="desc" data-i18n="highschool_desc">Background in a highschool with a scientific subjects focus, such as Mathemathics and Physics</div>
+          </div>
+        </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const engineFilter = document.getElementById('engineFilter');
-            const sortDateBtn = document.getElementById('sortDateBtn');
-            const projectContainer = document.querySelector('#portfolio .row'); // Il contenitore dei progetti
-            const projects = Array.from(document.querySelectorAll('.project-item'));
-        
-            let ascending = false;
-        
-            // Funzione principale di Filtraggio
-            function filterProjects() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const selectedEngine = engineFilter.value;
-        
-                projects.forEach(project => {
-                    const name = project.getAttribute('data-name').toLowerCase();
-                    const engine = project.getAttribute('data-engine');
-                    
-                    const matchesSearch = name.includes(searchTerm);
-                    const matchesEngine = selectedEngine === 'all' || engine === selectedEngine;
-        
-                    if (matchesSearch && matchesEngine) {
-                        project.style.display = 'block';
-                    } else {
-                        project.style.display = 'none';
-                    }
-                });
-            }
-        
-            // Funzione di Ordinamento per Data
-            function sortProjects() {
-                ascending = !ascending;
-                const sorted = projects.sort((a, b) => {
-                    const dateA = parseInt(a.getAttribute('data-date'));
-                    const dateB = parseInt(b.getAttribute('data-date'));
-                    return ascending ? dateA - dateB : dateB - dateA;
-                });
-        
-                // Svuota e riappende i progetti ordinati
-                sorted.forEach(el => projectContainer.appendChild(el));
-            }
-        
-            // Listeners
-            searchInput.addEventListener('input', filterProjects);
-            engineFilter.addEventListener('change', filterProjects);
-            sortDateBtn.addEventListener('click', sortProjects);
-        });
-    </script>
+        <div class="cv-block reveal">
+          <h4 data-i18n="cv.exp_h">Projects</h4>
+          <div class="cv-item">
+            <div class="role">Tatuchatoi</div>
+            <div class="meta" data-i18n="tatuchatoi_time">Unreal / C++ — 12/2025, 1 week</div>
+            <div class="desc" data-i18n="tatuchatoi_desc">First experience with Unreal Engine and the blueprint visual coding method. Handled basic character control, in-game skills, part of the UI and the parkour system.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role">Rob-Bot Inspector</div>
+            <div class="meta" data-i18n="botinspector_time">Unity / C# — 07/2025, 1 week</div>
+            <div class="desc" data-i18n="botinspector_desc">Experimented first hand with Shaders in Unity and developed a big impact shader for the game. Worked on other basic gameplay tasks, movement and basic actions.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role">ToDuat!</div>
+            <div class="meta">Unity / C# — 05/2025 - 06/2025</div>
+            <div class="desc" data-i18n="toduat_desc">Assigned Lead Programmer by tutors (3 devs team). Established architecture and coding conventions. Worked on a variety of gameplay systems to facilitate game flow, with an extensive use of Scriptable Objects, like quest system, tutorial, helped with dialogues, character and camera management.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role">Ragnaraft</div>
+            <div class="meta">Unity / C# — 03/2025 - 04/2025</div>
+            <div class="desc" data-i18n="ragnaraft_desc">Assigned Lead Programmer by tutors (3 devs team). Experience with mobile development, touch controls, 2D artstyle and tiles/sprites, particular character movement.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role">SusPack</div>
+            <div class="meta" data-i18n="suspack_time">Unity / C# — 01/2025, 1 week</div>
+            <div class="desc" data-i18n="suspack_desc">Experience with first person movement, basics of a weapon and physics based heavy projectile system, various gameplay aspects.</div>
+          </div>
+          <div class="cv-item">
+            <div class="role">SnakeShifter</div>
+            <div class="meta">Unity / C# — 11/2024 - 12/2024</div>
+            <div class="desc" data-i18n="snake_desc">Learned the basics of the Unity engine, basic shapes, tick function, movement, events, basic math...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-minor reveal">
+      <div class="section-label" data-i18n="cv.minor_label">hobbies &amp; sport</div>
+      <p data-i18n="cv.minor_text">[ A few words about your hobbies and sporting career. ]</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="wrap">
+    <div class="contact-grid">
+      <div class="contact-intro reveal">
+        <div class="section-label" data-i18n="contact.label">get in touch</div>
+        <h2 data-i18n="contact.title">Contact me</h2>
+        <p data-i18n="contact.intro">Got an opportunity, a question, or just want to say hi?</p>
+        <p class="contact-direct"><span data-i18n="contact.or">Or write directly to</span><br>
+          <a href="mailto:edoardo.cremente@tiscali.it">edoardo.cremente@tiscali.it</a></p>
+      </div>
+
+      <form class="reveal" action="https://formspree.io/f/xrezelqg" method="POST">
+        <div class="form-row">
+          <label for="name" data-i18n="contact.name_label">Your name</label>
+          <input type="text" name="name" id="name" class="field" data-i18n-ph="contact.name_ph" placeholder="e.g. Mario Rossi" required>
+        </div>
+        <div class="form-row">
+          <label for="email" data-i18n="contact.email_label">Your e-mail</label>
+          <input type="email" name="email" id="email" class="field" data-i18n-ph="contact.email_ph" placeholder="e.g. mario.rossi@gmail.com" required>
+        </div>
+        <div class="form-row">
+          <label for="message" data-i18n="contact.msg_label">Message</label>
+          <textarea name="message" id="message" class="field" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+          <i class="fas fa-paper-plane"></i> <span data-i18n="contact.send">Send message</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <p>© 2025 Edoardo Cremente — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="socials">
+        <a href="https://github.com/e-cremente" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/edoardo-cremente/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:edoardo.cremente@tiscali.it" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

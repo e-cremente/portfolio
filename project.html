@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — Edoardo Cremente</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="detail">
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">e-cremente<span class="cursor">▮</span></a>
+
+      <div class="nav-links">
+        <a href="index.html#about"     data-i18n="nav.about">About</a>
+        <a href="index.html#portfolio" data-i18n="nav.games">Games</a>
+        <a href="index.html#cv"        data-i18n="nav.cv">CV</a>
+        <a href="index.html#contact"   data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button data-lang="en" class="active">EN</button>
+          <button data-lang="it">IT</button>
+        </div>
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button id="navToggle" class="icon-btn nav-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== DETAIL ===================== -->
+  <main id="detail-root" class="detail-hero wrap">
+    <a href="index.html#portfolio" class="back-link reveal">
+      <i class="fas fa-arrow-left"></i> <span data-i18n="detail.back">Back to all games</span>
+    </a>
+
+    <div class="reveal">
+      <span class="kicker detail-engine" id="detail-engine">Unity · 2025</span>
+      <h1 class="detail-title" id="detail-title">Project title</h1>
+      <div class="tech-row detail-tech" id="detail-tech"></div>
+    </div>
+
+    <div class="detail-media reveal" id="detail-media"></div>
+
+    <div class="detail-cols">
+      <div class="detail-body reveal">
+        <h3 data-i18n="detail.worked_h">What I worked on</h3>
+        <p id="detail-worked"></p>
+
+        <h3 data-i18n="detail.story_h">The story</h3>
+        <div id="detail-story"></div>
+      </div>
+
+      <aside class="detail-side reveal">
+        <h4 data-i18n="detail.info_h">Project info</h4>
+        <div class="info-row"><span data-i18n="detail.info_engine">Engine</span><span id="info-engine-val">—</span></div>
+        <div class="info-row"><span data-i18n="detail.info_time">Dev time</span><span id="info-time-val">—</span></div>
+        <div class="info-row"><span data-i18n="detail.info_year">Year</span><span id="info-year-val">—</span></div>
+
+        <a id="detail-download" class="btn btn-primary" href="#" target="_blank" rel="noopener">
+          <i class="fas fa-download"></i> <span class="dl-label">Download</span>
+        </a>
+        <a id="detail-github" class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> <span data-i18n="detail.github">View on GitHub</span>
+        </a>
+        <a id="detail-gameplay" class="btn btn-ghost" href="#" target="_blank" rel="noopener" style="display:none">
+          <i class="fas fa-play"></i> <span data-i18n="detail.gameplay">Watch gameplay</span>
+        </a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" style="margin-top:4rem">
+    <div class="footer-inner wrap">
+      <p>© 2025 Edoardo Cremente — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="socials">
+        <a href="https://github.com/e-cremente" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/edoardo-cremente" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:edoardo.cremente@tiscali.it" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
