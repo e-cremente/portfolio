@@ -28,7 +28,7 @@ const TRANSLATIONS = {
     "about.lead": "As a game programmer my main goal is to create and develop <span class=\"hl\">smooth, satisfying gameplay features</span> for any game I'm working on. I also love planning, optimising and building <span class=\"hl\">useful gameplay systems</span> &mdash; so designers can focus on ideating and testing, and other programmers can tweak, maintain or update the code without a headache.",
     "about.personal_tag": "// off the clock",
     "about.personal": "As a hobby I also enjoy doing some voice acting &mdash; even though I'm Italian, you can expect to hear my voice in some of the games I've worked on! Outside of code I'm the kind of person who gets hooked on whatever is hard to learn, because the difficult parts are exactly the interesting ones.",
-    "about.photo_caption": "// photo coming soon",
+    "about.photo_caption": "// Edoardo Cremente",
 
     "portfolio.label": "selected work",
     "portfolio.title": "My Games",
@@ -117,7 +117,7 @@ const TRANSLATIONS = {
     "about.lead": "Come game programmer il mio obiettivo principale è creare e sviluppare <span class=\"hl\">feature di gameplay fluide e soddisfacenti</span> per qualunque gioco a cui lavoro. Mi piace anche progettare, ottimizzare e costruire <span class=\"hl\">sistemi di gameplay utili</span> &mdash; così i designer possono concentrarsi sull'ideare e testare, e gli altri programmatori possono ritoccare, mantenere o aggiornare il codice senza grattacapi.",
     "about.personal_tag": "// fuori orario",
     "about.personal": "Come hobby mi piace dilettarmi nel doppiaggio amatoriale &mdash; anche se sono italiano, puoi aspettarti di sentire la mia voce in alcuni dei giochi a cui ho lavorato! Fuori dal codice sono il tipo di persona che si appassiona a tutto ciò che è difficile da imparare, perché le parti difficili sono esattamente quelle interessanti.",
-    "about.photo_caption": "// foto in arrivo",
+    "about.photo_caption": "// Edoardo Cremente",
 
     "portfolio.label": "lavori selezionati",
     "portfolio.title": "I miei giochi",

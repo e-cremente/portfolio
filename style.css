@@ -231,7 +231,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; position: relative; }
 .about-lead p + p { margin-top: 1.2rem; }
 
 .photo-frame {
-  position: relative; aspect-ratio: 3/4; border: 1px solid var(--border-strong); border-radius: 12px;
+  position: relative; aspect-ratio: 1; border: 1px solid var(--border-strong); border-radius: 12px;
   background:
     linear-gradient(135deg, var(--green-soft), transparent 60%),
     var(--bg-3);
