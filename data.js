@@ -238,82 +238,92 @@ const PROJECTS = [
   },
 
   {
-        id: "stillhear",
-        engine: "unreal",
-        date: "20260626",
-        videoId: "",
-        image: "Images/StillHear.png",
-        github: "",
-        download: { url: "", en: "Build not available yet", it: "Build non ancora disponibile" },
-        tech: ["Unreal Engine", "C++ / Blueprints", "Third Person", "Puzzle Game"],
+    id: "stillhear",
+    engine: "unreal",
+    date: "20260626",
+    videoId: "",
+    image: "Images/StillHear.png",
+    github: "",
+    download: { url: "", en: "Build not available yet", it: "Build non ancora disponibile" },
+    tech: ["Unreal Engine", "C++ / Blueprints", "Third Person", "Puzzle Game"],
 
-        /* -------------------------------------------------------------
-           SHOWCASE (opzionale): una clip per ogni feature.
-           Schema di ogni voce:
-             type   : "video" (consigliato) | "image" | "gif" | "youtube"
-             media  : percorso del file. video -> .mp4/.webm ; image -> .png/.jpg/.webp ;
-                      gif -> .gif ; youtube -> solo l'ID del video.
-             poster : (opzionale, solo video) immagine mostrata prima del play.
-             en/it  : { title, desc } -> didascalia nelle due lingue.
-           Suggerimento: registra clip CORTE (5-12s) e silenziose; un .mp4/.webm
-           pesa ~10x meno di una GIF a parità di qualità. Metti i file dentro
-           "Images/stillhear/" con i nomi qui sotto e compariranno da soli.
-           ------------------------------------------------------------- */
-        showcase: [
-          {
-            type: "image", media: "Images/stillhear/cameravolumes.png", poster: "",
-            en: { title: "Volume-based camera system", desc: "Cameras switch and blend based on trigger volumes placed across the level — and the active volume also drives the player's input direction." },
-            it: { title: "Sistema di camere basato su volumi", desc: "Le camere cambiano e si blendano in base ai volumi posti nel livello; il volume attivo coordina anche la direzione dell'input del giocatore." }
-            },
-          {
-            type: "video", media: "Images/stillhear/cameravolumes.mp4", poster: "",
-            en: { title: "", desc: "" },
-            it: { title: "", desc: "" }
-          },
-          {
-            type: "video", media: "Images/stillhear/edgegrab.mp4", poster: "",
-            en: { title: "Gameplay Ability System & abilities", desc: "Set up Unreal's Gameplay Ability System and authored a large set of the player's abilities on top of it." },
-            it: { title: "Gameplay Ability System e abilità", desc: "Configurato il Gameplay Ability System di Unreal e realizzato gran parte delle abilità del giocatore." }
-          },
-          {
-            type: "video", media: "Images/stillhear/weather.mp4", poster: "",
-            en: { title: "Dynamic weather system", desc: "A weather system centred on rain, lightning and thunder." },
-            it: { title: "Sistema meteo dinamico", desc: "Un sistema meteo incentrato su pioggia, fulmini e tuoni." }
-          },
-          {
-            type: "video", media: "Images/stillhear/enemy.mp4", poster: "",
-            en: { title: "Enemy: AI, skills & animation", desc: "Built one of the game's main enemies end to end: AI behaviour, skills, animation and control rig." },
-            it: { title: "Nemico: IA, abilità e animazione", desc: "Realizzato uno dei nemici principali dall'inizio alla fine: comportamento IA, abilità, animazione e control rig." }
-          },
-          {
-            type: "video", media: "Images/stillhear/rebinding.mp4", poster: "",
-            en: { title: "Input rebinding system", desc: "A complete, functional input-rebinding system for both keyboard and gamepad." },
-            it: { title: "Sistema di rebinding dei comandi", desc: "Un sistema di rebinding completo e funzionante, sia per tastiera sia per gamepad." }
-          }
-        ],
-        en: {
-            title: "Still Hear",
-            worked: [
-                "Complex Camera system based on Volumes which also handles input, implementation of Gameplay Ability System and vast amount of abilities, research and integration of plugins such as Flow Graph and Common UI, creation of several Shaders, for both Surface Materials and Post Processes",
-                " implementation of a Weather System focusing around Rain, Lightnings and Thunders, implementation of the complete AI behaviour, skills, animation and control rig for one of the main enemies of the game, implementation of a complete and functional Input Rebinding system, for both keyboard and gamepad.",
-            ],
-            devtime: "7 months",
-            short: "A Puzzle Platformer game in which you interpret the last Sound Keeper trying to restore the armony in a World where Sound Eaters unleashed chaos.",
-            long: [
-                ""
-            ]
+    /* -------------------------------------------------------------
+        SHOWCASE (opzionale): una clip per ogni feature.
+        Schema di ogni voce:
+          type   : "video" (consigliato) | "image" | "gif" | "youtube"
+          media  : percorso del file. video -> .mp4/.webm ; image -> .png/.jpg/.webp ;
+                  gif -> .gif ; youtube -> solo l'ID del video.
+          poster : (opzionale, solo video) immagine mostrata prima del play.
+          en/it  : { title, desc } -> didascalia nelle due lingue.
+        Suggerimento: registra clip CORTE (5-12s) e silenziose; un .mp4/.webm
+        pesa ~10x meno di una GIF a parità di qualità. Metti i file dentro
+        "Images/stillhear/" con i nomi qui sotto e compariranno da soli.
+        ------------------------------------------------------------- */
+    showcase: [
+      {
+        type: "image", media: "Images/stillhear/cameravolumes.png", poster: "",
+        en: { title: "Volume-based camera system", desc: "Cameras switch and blend based on trigger volumes placed across the level — and the active volume also drives the player's input direction." },
+        it: { title: "Sistema di camere basato su volumi", desc: "Le camere cambiano e si blendano in base ai volumi posti nel livello; il volume attivo coordina anche la direzione dell'input del giocatore." }
         },
-        it: {
-            title: "Still Hear",
-            worked: [
-                "Sistema complesso di Camere basato su Volumi che coordinano anche l'input, implementazione del Gameplay Ability System e di una grande quantità delle abilità, ricerca e integrazione di plugin quali Flow Graph e Common UI, creazione di numerosi Shader, sia per Materiali Surface che Post Process",
-                " implementazione di un Sistema Meteo incentrato su Pioggia, Fulmini e Tuoni, implementazione completa del comportamento AI, skill, animazioni e control rig per uno dei nemici principali del gioco, implementazione di un completo e funzionale sistema di Input Rebinding, sia per tastiera che per gamepad.",
-            ],
-            devtime: "7 mesi",
-            short: "Un gioco Puzzle Platformer dove interpreti l'ultimo Portatore del Suono che cerca di riportare l'armonia in un Mondo in cui i Divoratori del Suono hanno seminato il chaos.",
-            long: [
-                ""
-            ]
-        }
+      {
+        type: "video", media: "Images/stillhear/cameravolumes.mp4", poster: "",
+        en: { title: "", desc: "" },
+        it: { title: "", desc: "" }
+      },
+      {
+        type: "video", media: "Images/stillhear/edgegrab.mp4", poster: "",
+        en: { title: "Gameplay Ability System & abilities", desc: "Set up Unreal's Gameplay Ability System and authored a large set of the player's abilities on top of it." },
+        it: { title: "Gameplay Ability System e abilità", desc: "Configurato il Gameplay Ability System di Unreal e realizzato gran parte delle abilità del giocatore." }
+      },
+      {
+        type: "video", media: "Images/stillhear/weather.mp4", poster: "",
+        en: { title: "Dynamic weather system", desc: "A weather system centred on rain, lightning and thunder." },
+        it: { title: "Sistema meteo dinamico", desc: "Un sistema meteo incentrato su pioggia, fulmini e tuoni." }
+      },
+      {
+        type: "video", media: "Images/stillhear/wormpatrol.mp4", poster: "",
+        en: { title: "Enemy: AI, skills & animation", desc: "Built one of the game's main enemies end to end: AI behaviour, skills, animation and control rig." },
+        it: { title: "Nemico: IA, abilità e animazione", desc: "Realizzato uno dei nemici principali dall'inizio alla fine: comportamento IA, abilità, animazione e control rig." }
+      },
+      {
+        type: "video", media: "Images/stillhear/wormattack.mp4", poster: "",
+        en: { title: "", desc: "" },
+        it: { title: "", desc: "" }
+      },
+      {
+        type: "image", media: "Images/stillhear/padpreset.png", poster: "",
+        en: { title: "Input rebinding system", desc: "A complete, functional input-rebinding system for both keyboard and gamepad." },
+        it: { title: "Sistema di rebinding dei comandi", desc: "Un sistema di rebinding completo e funzionante, sia per tastiera sia per gamepad." }
+      },
+      {
+        type: "image", media: "Images/stillhear/keyboardpreset.png", poster: "",
+        en: { title: "", desc: "" },
+        it: { title: "", desc: "" }
+      }
+    ],
+    en: {
+        title: "Still Hear",
+        worked: [
+            "Complex Camera system based on Volumes which also handles input, implementation of Gameplay Ability System and vast amount of abilities, research and integration of plugins such as Flow Graph and Common UI, creation of several Shaders, for both Surface Materials and Post Processes",
+            " implementation of a Weather System focusing around Rain, Lightnings and Thunders, implementation of the complete AI behaviour, skills, animation and control rig for one of the main enemies of the game, implementation of a complete and functional Input Rebinding system, for both keyboard and gamepad.",
+        ],
+        devtime: "7 months",
+        short: "A Puzzle Platformer game in which you interpret the last Sound Keeper trying to restore the armony in a World where Sound Eaters unleashed chaos.",
+        long: [
+            ""
+        ]
+    },
+    it: {
+        title: "Still Hear",
+        worked: [
+            "Sistema complesso di Camere basato su Volumi che coordinano anche l'input, implementazione del Gameplay Ability System e di una grande quantità delle abilità, ricerca e integrazione di plugin quali Flow Graph e Common UI, creazione di numerosi Shader, sia per Materiali Surface che Post Process",
+            " implementazione di un Sistema Meteo incentrato su Pioggia, Fulmini e Tuoni, implementazione completa del comportamento AI, skill, animazioni e control rig per uno dei nemici principali del gioco, implementazione di un completo e funzionale sistema di Input Rebinding, sia per tastiera che per gamepad.",
+        ],
+        devtime: "7 mesi",
+        short: "Un gioco Puzzle Platformer dove interpreti l'ultimo Portatore del Suono che cerca di riportare l'armonia in un Mondo in cui i Divoratori del Suono hanno seminato il chaos.",
+        long: [
+            ""
+        ]
     }
+  }
 ];
