@@ -203,8 +203,20 @@ function renderDetail() {
   document.getElementById("detail-tech").innerHTML =
     p.tech.map(x => `<span class="tech">${x}</span>`).join("");
 
-  document.getElementById("detail-worked").innerHTML = t.worked;
-  document.getElementById("detail-story").innerHTML = t.long.map(par => `<p>${par}</p>`).join("");
+  // "Di cosa mi sono occupato": accetta sia stringa che array di paragrafi
+  const workedEl = document.getElementById("detail-worked");
+  workedEl.innerHTML = (Array.isArray(t.worked) ? t.worked : [t.worked])
+    .filter(s => s && String(s).trim())
+    .map(s => `<p>${s}</p>`).join("");
+
+  // "La storia": salta i paragrafi vuoti e nasconde l'intestazione se non c'è testo
+  const story = (Array.isArray(t.long) ? t.long : [t.long]).filter(s => s && String(s).trim());
+  document.getElementById("detail-story").innerHTML = story.map(par => `<p>${par}</p>`).join("");
+  const storyH = document.querySelector('#detail-root [data-i18n="detail.story_h"]');
+  if (storyH) storyH.style.display = story.length ? "" : "none";
+
+  // Showcase opzionale (clip dimostrative per ogni feature)
+  buildShowcase(p, lang, dict);
 
   document.getElementById("info-engine-val").textContent = p.engine === "unreal" ? "Unreal" : "Unity";
   document.getElementById("info-time-val").textContent = t.devtime;
@@ -222,6 +234,109 @@ function renderDetail() {
   else { gp.style.display = "none"; }
 
   observeReveals();
+}
+
+/* =================================================================
+   SHOWCASE — clip dimostrative per le feature (opzionale)
+   -----------------------------------------------------------------
+   Si attiva solo se il progetto ha un array "showcase" in data.js.
+   Ogni voce: { type, media, poster?, en:{title,desc}, it:{title,desc} }
+     type  : "video" (consigliato) | "image" | "gif" | "youtube"
+     media : percorso del file (.mp4/.webm/.gif) oppure, per youtube, l'ID
+   Finché il file non esiste, mostra un placeholder ordinato; appena
+   il file è presente al percorso indicato, la clip compare da sola.
+   I video partono da soli SOLO quando entrano nello schermo (e si
+   fermano quando escono), sono muti e in loop. Con "reduce motion"
+   attivo mostrano invece i controlli e non partono in automatico.
+   ================================================================= */
+let showcaseObserver = null;
+
+function observeShowcaseVideo(video) {
+  if (!("IntersectionObserver" in window)) { video.setAttribute("autoplay", ""); return; }
+  if (!showcaseObserver) {
+    showcaseObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { const pr = e.target.play && e.target.play(); if (pr) pr.catch(() => {}); }
+        else if (e.target.pause) e.target.pause();
+      });
+    }, { threshold: 0.35 });
+  }
+  showcaseObserver.observe(video);
+}
+
+function buildShowcase(p, lang, dict) {
+  const host = document.getElementById("detail-showcase");
+  if (!host) return;
+  host.innerHTML = "";
+  const items = Array.isArray(p.showcase) ? p.showcase : [];
+  if (!items.length) { host.style.display = "none"; return; }
+  host.style.display = "";
+
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const head = document.createElement("h3");
+  head.className = "showcase-head";
+  head.textContent = dict["detail.showcase_h"];
+  host.appendChild(head);
+
+  items.forEach(item => {
+    const tx = item[lang] || item.en || {};
+    const wrap = document.createElement("div");
+    wrap.className = "showcase-item reveal";
+
+    const cap = document.createElement("div");
+    cap.className = "showcase-cap";
+    cap.innerHTML = `<h4>${tx.title || ""}</h4>${tx.desc ? `<p>${tx.desc}</p>` : ""}`;
+    wrap.appendChild(cap);
+
+    const box = document.createElement("div");
+    box.className = "showcase-media";
+
+    const showPlaceholder = () => {
+      box.classList.add("is-empty");
+      box.innerHTML =
+        `<div class="showcase-ph">
+           <i class="fas fa-clapperboard" aria-hidden="true"></i>
+           <span class="mono">${dict["showcase.soon"]}</span>
+         </div>`;
+    };
+
+    const type = item.type || "video";
+    const src = item.media || "";
+
+    if (!src) {
+      showPlaceholder();
+    } else if (type === "youtube") {
+      box.innerHTML =
+        `<iframe src="https://www.youtube.com/embed/${src}?rel=0" title="${tx.title || ""}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    } else if (type === "gif" || type === "image") {
+      const img = document.createElement("img");
+      img.loading = "lazy"; img.alt = tx.title || ""; img.src = src;
+      img.addEventListener("error", showPlaceholder, { once: true });
+      box.appendChild(img);
+    } else { // video
+      let settled = false;
+      const fail = () => { if (!settled) { settled = true; showPlaceholder(); } };
+      const v = document.createElement("video");
+      v.muted = true; v.loop = true; v.playsInline = true; v.preload = "metadata";
+      if (item.poster) v.poster = item.poster;
+      if (reduce) v.controls = true;
+      const s = document.createElement("source");
+      s.src = src;
+      s.type = src.toLowerCase().endsWith(".webm") ? "video/webm" : "video/mp4";
+      v.appendChild(s);
+      v.addEventListener("loadeddata", () => { settled = true; }, { once: true });
+      v.addEventListener("error", fail, { once: true });
+      s.addEventListener("error", fail, { once: true });
+      box.appendChild(v);
+      if (!reduce) observeShowcaseVideo(v);
+    }
+
+    wrap.appendChild(box);
+    host.appendChild(wrap);
+  });
 }
 
 /* =================================================================
