@@ -243,7 +243,7 @@ const PROJECTS = [
     date: "20260626",
     videoId: "",
     image: "Images/StillHear.png",
-    github: "",
+    github: { url: "", en: "GitHub Repository not available yet", it: "Repository GitHub non ancora disponibile" },
     download: { url: "", en: "Build not available yet", it: "Build non ancora disponibile" },
     tech: ["Unreal Engine", "C++ / Blueprints", "Third Person", "Puzzle Game"],
 

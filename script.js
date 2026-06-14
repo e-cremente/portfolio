@@ -51,6 +51,18 @@ function applyTheme(theme) {
 let cardRefs = []; // { el, project } per aggiornare i testi al cambio lingua
 let sortAsc = false;
 
+/* ---------- GitHub: URL ed etichetta del bottone ----------
+   "github" può essere una stringa con l'URL (comportamento di default,
+   usa il testo predefinito del bottone) OPPURE un oggetto { url, en, it }
+   come "download", per personalizzare il testo nelle due lingue. */
+function githubUrl(p) {
+  return (p.github && typeof p.github === "object") ? (p.github.url || "") : (p.github || "");
+}
+function githubLabel(p, lang) {
+  if (p.github && typeof p.github === "object") return p.github[lang] || p.github.en || null;
+  return null; // null = usa l'etichetta predefinita delle traduzioni
+}
+
 function buildCard(p, index) {
   const lang = store.lang;
   const t = p[lang] || p.en;
@@ -77,7 +89,7 @@ function buildCard(p, index) {
           <span class="sm-label">${(TRANSLATIONS[lang] || TRANSLATIONS.en)["card.see_more"]}</span>
           <i class="fas fa-arrow-right"></i>
         </a>
-        <a class="gh" href="${p.github}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a class="gh" href="${githubUrl(p)}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>`;
 
@@ -223,7 +235,16 @@ function renderDetail() {
   document.getElementById("info-year-val").textContent = p.date.slice(0, 4);
 
   const gh = document.getElementById("detail-github");
-  gh.href = p.github;
+  gh.href = githubUrl(p);
+  const ghLabel = githubLabel(p, lang);
+  const ghSpan = gh.querySelector("span");
+  if (ghLabel) {
+    ghSpan.removeAttribute("data-i18n");   // testo su misura: non farlo sovrascrivere dalle traduzioni
+    ghSpan.textContent = ghLabel;
+  } else {
+    ghSpan.setAttribute("data-i18n", "detail.github"); // default: etichetta dalle traduzioni
+    ghSpan.textContent = dict["detail.github"];
+  }
 
   const dl = document.getElementById("detail-download");
   dl.href = p.download.url;
