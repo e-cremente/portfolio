@@ -208,7 +208,7 @@ const PROJECTS = [
     image: "",
     github: "https://github.com/e-cremente/Tatuchatoi",
     download: { url: "https://drive.google.com/file/d/15rOl-Y7oj_XkibktzJFhw-hmKFiM2nGZ/view?usp=drive_link", en: "Download .exe build", it: "Scarica build .exe" },
-    tech: ["Unreal Engine", "C++ / Blueprints", "First Person", "Jam"],
+    tech: ["Unreal Engine", "Only Blueprints", "First Person", "Jam"],
     en: {
       title: "Tatuchatoi",
       worked: "Basic character movement, skill system, helped with UI and parkour mechanics.",
