@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Edoardo Cremente</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="doc">
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">e-cremente<span class="cursor">▮</span></a>
+
+      <div class="nav-links">
+        <a href="index.html#about"     data-i18n="nav.about">About</a>
+        <a href="index.html#portfolio" data-i18n="nav.games">Games</a>
+        <a href="index.html#cv"        data-i18n="nav.cv">CV</a>
+        <a href="index.html#contact"   data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button data-lang="en" class="active">EN</button>
+          <button data-lang="it">IT</button>
+        </div>
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <button id="navToggle" class="icon-btn nav-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== DOC ===================== -->
+  <main class="doc-hero wrap">
+    <a id="doc-back" href="index.html#portfolio" class="back-link reveal">
+      <i class="fas fa-arrow-left"></i> <span data-i18n="doc.back">Back to Still Hear</span>
+    </a>
+
+    <article id="doc-content" class="doc-content"></article>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" style="margin-top:4rem">
+    <div class="footer-inner wrap">
+      <p>© 2025 Edoardo Cremente — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="socials">
+        <a href="https://github.com/e-cremente" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/edoardo-cremente" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:edoardo.cremente@tiscali.it" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="data.js"></script>
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

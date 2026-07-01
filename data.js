@@ -261,7 +261,7 @@ const PROJECTS = [
         ------------------------------------------------------------- */
     showcase: [
       {
-        type: "image", media: "Images/stillhear/cameravolumes.png", poster: "",
+        type: "image", media: "Images/stillhear/cameravolumes.png", poster: "", doc: "camera",
         en: { title: "Volume-based camera system", desc: "Cameras switch and blend based on trigger volumes placed across the level — and the active volume also drives the player's input direction." },
         it: { title: "Sistema di camere basato su volumi", desc: "Le camere cambiano e si blendano in base ai volumi posti nel livello; il volume attivo coordina anche la direzione dell'input del giocatore." }
         },
@@ -271,17 +271,17 @@ const PROJECTS = [
         it: { title: "", desc: "" }
       },
       {
-        type: "video", media: "Images/stillhear/edgegrab.mp4", poster: "",
+        type: "video", media: "Images/stillhear/edgegrab.mp4", poster: "", doc: "gas",
         en: { title: "Gameplay Ability System & abilities", desc: "Set up Unreal's Gameplay Ability System and authored a large set of the player's abilities on top of it." },
         it: { title: "Gameplay Ability System e abilità", desc: "Configurato il Gameplay Ability System di Unreal e realizzato gran parte delle abilità del giocatore." }
       },
       {
-        type: "video", media: "Images/stillhear/weather.mp4", poster: "",
+        type: "video", media: "Images/stillhear/weather.mp4", poster: "", doc: "weather",
         en: { title: "Dynamic weather system", desc: "A weather system centred on rain, lightning and thunder." },
         it: { title: "Sistema meteo dinamico", desc: "Un sistema meteo incentrato su pioggia, fulmini e tuoni." }
       },
       {
-        type: "video", media: "Images/stillhear/wormpatrol.mp4", poster: "",
+        type: "video", media: "Images/stillhear/wormpatrol.mp4", poster: "", doc: "enemy",
         en: { title: "Enemy: AI, skills & animation", desc: "Built one of the game's main enemies end to end: AI behaviour, skills, animation and control rig." },
         it: { title: "Nemico: IA, abilità e animazione", desc: "Realizzato uno dei nemici principali dall'inizio alla fine: comportamento IA, abilità, animazione e control rig." }
       },
@@ -291,7 +291,7 @@ const PROJECTS = [
         it: { title: "", desc: "" }
       },
       {
-        type: "image", media: "Images/stillhear/padpreset.png", poster: "",
+        type: "image", media: "Images/stillhear/padpreset.png", poster: "", doc: "input",
         en: { title: "Input rebinding system", desc: "A complete, functional input-rebinding system for both keyboard and gamepad." },
         it: { title: "Sistema di rebinding dei comandi", desc: "Un sistema di rebinding completo e funzionante, sia per tastiera sia per gamepad." }
       },

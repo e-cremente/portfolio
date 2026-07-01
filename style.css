@@ -362,6 +362,7 @@ select.field { cursor: pointer; }
 .cv-minor { margin-top: 2.5rem; border-left: 2px solid var(--border); padding-left: 1.4rem; max-width: 75ch; }
 .cv-minor .section-label { font-size: 0.72rem; }
 .cv-minor p { font-size: 0.92rem; color: var(--text-dim); }
+.cv-consent { margin-top: 2.5rem; font-size: 0.78rem; font-style: italic; color: var(--text-dim); opacity: 0.75; }
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: start; }
@@ -483,6 +484,12 @@ form label,
 .showcase-cap { margin-bottom: 0.9rem; }
 .showcase-cap h4 { font-size: 1.25rem; color: var(--text); margin-bottom: 0.3rem; }
 .showcase-cap p { color: var(--text-dim); font-size: 0.96rem; }
+.showcase-doclink {
+  display: inline-flex; align-items: center; gap: 0.5ch; margin-top: 0.6rem;
+  font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; letter-spacing: 0.04em;
+  color: var(--green); transition: gap 0.25s;
+}
+.showcase-doclink:hover { gap: 1ch; }
 
 .showcase-media {
   position: relative; aspect-ratio: 16/9; border: 1px solid var(--border);
@@ -502,3 +509,55 @@ form label,
 }
 .showcase-ph i { font-size: 2rem; color: var(--green); opacity: 0.6; }
 .showcase-ph span { font-size: 0.78rem; letter-spacing: 0.08em; }
+
+/* =================================================================
+   Pagina documentazione (doc.html)
+   ================================================================= */
+.doc-hero { padding-top: 7rem; }
+.doc-content {
+  max-width: 78ch; margin: 2rem auto 0; font-size: 1.05rem; line-height: 1.75; color: var(--text);
+}
+.doc-content h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 1.2rem; }
+.doc-content h2 {
+  font-size: 1.5rem; margin: 2.6rem 0 0.9rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+.doc-content h3 {
+  font-family: "IBM Plex Mono", monospace; font-size: 0.9rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--green); margin: 2rem 0 0.7rem;
+}
+.doc-content p { margin-bottom: 1.2rem; }
+.doc-content ul, .doc-content ol { margin: 0 0 1.2rem 1.4rem; }
+.doc-content li { margin-bottom: 0.5rem; }
+.doc-content a { color: var(--green); border-bottom: 1px solid var(--border-strong); }
+.doc-content a:hover { background: var(--green-soft); }
+.doc-content img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); margin: 1rem 0; }
+.doc-content blockquote {
+  margin: 1.4rem 0; padding: 0.4rem 1.2rem; border-left: 3px solid var(--border-strong);
+  color: var(--text-dim); font-style: italic;
+}
+.doc-content code {
+  font-family: "IBM Plex Mono", monospace; font-size: 0.88em;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 5px; padding: 0.1em 0.4em;
+}
+.doc-content pre {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 1.1rem 1.3rem; overflow-x: auto; margin: 0 0 1.4rem;
+}
+.doc-content pre code { background: none; border: 0; padding: 0; }
+.doc-content hr { border: 0; border-top: 1px solid var(--border); margin: 2.4rem 0; }
+.doc-content h4 { font-size: 1.12rem; margin: 1.8rem 0 0.6rem; color: var(--text); }
+.doc-content strong { color: var(--text); font-weight: 700; }
+.doc-content table {
+  width: 100%; border-collapse: collapse; margin: 0 0 1.6rem; font-size: 0.92rem;
+  display: block; overflow-x: auto;
+}
+.doc-content thead th {
+  text-align: left; background: var(--bg-2); color: var(--green);
+  font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; letter-spacing: 0.05em;
+  text-transform: uppercase; padding: 0.7rem 0.9rem; border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.doc-content tbody td { padding: 0.65rem 0.9rem; border: 1px solid var(--border); vertical-align: top; }
+.doc-content tbody tr:nth-child(even) { background: color-mix(in srgb, var(--bg-2) 45%, transparent); }
+.doc-content table code { white-space: nowrap; }

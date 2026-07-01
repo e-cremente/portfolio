@@ -308,6 +308,11 @@ function buildShowcase(p, lang, dict) {
     const cap = document.createElement("div");
     cap.className = "showcase-cap";
     cap.innerHTML = `<h4>${tx.title || ""}</h4>${tx.desc ? `<p>${tx.desc}</p>` : ""}`;
+    if (item.doc) {
+      cap.innerHTML +=
+        `<a class="showcase-doclink" href="doc.html?p=${encodeURIComponent(p.id)}&doc=${encodeURIComponent(item.doc)}">`
+        + `${dict["detail.seemore"]} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>`;
+    }
     wrap.appendChild(cap);
 
     const box = document.createElement("div");
@@ -361,6 +366,49 @@ function buildShowcase(p, lang, dict) {
 }
 
 /* =================================================================
+   Pagina documentazione (doc.html)
+   Legge ?p=<idProgetto>&doc=<slug>, carica docs/<p>/<slug>.<lang>.md
+   e lo rende in HTML. Si aggiorna al cambio lingua.
+   ================================================================= */
+function getDocParams() {
+  const q = new URLSearchParams(location.search);
+  return { p: q.get("p"), doc: q.get("doc") };
+}
+
+async function renderDoc() {
+  const host = document.getElementById("doc-content");
+  if (!host) return;
+  const lang = store.lang;
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const { p, doc } = getDocParams();
+
+  // link "torna al progetto"
+  const back = document.getElementById("doc-back");
+  if (back && p) back.href = `project.html?id=${encodeURIComponent(p)}`;
+
+  if (!p || !doc) {
+    host.innerHTML = `<p class="empty-msg">${dict["doc.notfound"]}</p>`;
+    return;
+  }
+
+  host.innerHTML = `<p class="empty-msg">${dict["doc.loading"]}</p>`;
+
+  try {
+    const res = await fetch(`docs/${p}/${doc}.${lang}.md`);
+    if (!res.ok) throw new Error(res.status);
+    const md = await res.text();
+    host.innerHTML = (window.marked ? window.marked.parse(md) : `<pre>${md}</pre>`);
+    // titolo pagina dal primo heading, se presente
+    const h1 = host.querySelector("h1");
+    document.title = (h1 ? h1.textContent : "Documentation") + " — Edoardo Cremente";
+  } catch (e) {
+    host.innerHTML = `<p class="empty-msg">${dict["doc.notfound"]}</p>`;
+  }
+
+  observeReveals();
+}
+
+/* =================================================================
    Lingua / tema — applica e aggiorna tutto
    ================================================================= */
 function setLang(lang) {
@@ -368,6 +416,7 @@ function setLang(lang) {
   applyStaticTranslations(lang);
   if (document.getElementById("project-grid")) refreshCardTexts();
   if (document.body.dataset.page === "detail") renderDetail();
+  if (document.body.dataset.page === "doc") renderDoc();
 }
 
 function setTheme(theme) {
@@ -430,6 +479,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // dettaglio
   if (document.body.dataset.page === "detail") renderDetail();
+
+  // documentazione
+  if (document.body.dataset.page === "doc") renderDoc();
 
   observeReveals();
 });
