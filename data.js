@@ -241,10 +241,10 @@ const PROJECTS = [
     id: "stillhear",
     engine: "unreal",
     date: "20260626",
-    videoId: "",
-    image: "Images/StillHear.png",
-    github: { url: "", en: "GitHub Repository not available yet", it: "Repository GitHub non ancora disponibile" },
-    download: { url: "", en: "Build not available yet", it: "Build non ancora disponibile" },
+    videoId: "mAjYi5Qyw7I",
+    image: "",
+    github: { url: "https://github.com/e-cremente/StillHearVerticalSlice"},
+    download: { url: "https://drive.google.com/file/d/14H7gYIuOjQuQJL4b_9wUUhDudJdlicJi/view?usp=drive_link", en: "Download .exe build", it: "Scarica build .exe" },
     tech: ["Unreal Engine", "C++ / Blueprints", "Third Person", "Puzzle Game"],
 
     /* -------------------------------------------------------------
