@@ -244,7 +244,7 @@ const PROJECTS = [
     videoId: "mAjYi5Qyw7I",
     image: "",
     github: { url: "https://github.com/e-cremente/StillHearVerticalSlice"},
-    download: { url: "https://drive.google.com/file/d/14H7gYIuOjQuQJL4b_9wUUhDudJdlicJi/view?usp=drive_link", en: "Download .exe build", it: "Scarica build .exe" },
+    download: { url: "https://drive.google.com/file/d/1SZTbqxkX3dq6g_QlyqXJZg1nlHvXlBHu/view?usp=drive_link", en: "Download .exe build", it: "Scarica build .exe" },
     tech: ["Unreal Engine", "C++ / Blueprints", "Third Person", "Puzzle Game"],
 
     /* -------------------------------------------------------------
